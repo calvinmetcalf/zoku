@@ -17,7 +17,6 @@ ajax(url, data); // Defaults to 'get'
 ajax.get(url, data);
 ajax.post(url, data);
 
-
 // Specify method explicitly
 ajax(url, 'get', data);
 
