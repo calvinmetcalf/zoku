@@ -36,7 +36,7 @@ function ajax(url, method, body) {
     if (method === 'get') {
       ajax.send();
     } else {
-      xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+      ajax.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
       ajax.send(data);
     }
   });
