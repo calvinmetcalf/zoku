@@ -4,6 +4,10 @@ var promise = require('lie');
 var qs = require('querystring');
 
 function ajax(url, method, body) {
+  if (typeof method !== 'string' && typeof body === 'undefined') {
+    body = method;
+    method = 'get';
+  } 
   body = body || {};
   
   return promise(function(resolve,reject) {
@@ -38,14 +42,10 @@ function ajax(url, method, body) {
   });
 }
 
-module.exports = function (url, data) {
-  return ajax(url, 'get', data);
-};
+module.exports = ajax;
 
-exports.get = function (url, data) {
-  return ajax(url, 'get', data);
-};
+ajax.get = ajax;
 
-exports.post = function (url, data) {
+ajax.post = function (url, data) {
   return ajax(url, 'post', data);
 };
