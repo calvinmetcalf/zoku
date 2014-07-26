@@ -1,17 +1,17 @@
-ajax
+zoku
 ====
 
 Promisified ajax library; browserify compatible.
 
 
 ```bash
-npm install calvinmetcalf/ajax --save
+npm install zoku --save
 ```
 
 ## Usage
 
 ```js
-var ajax = require('ajax');
+var ajax = require('zoku');
 
 ajax(url, data); // Defaults to 'get'
 ajax.get(url, data);
@@ -27,3 +27,8 @@ ajax(url, data).then(function (result) {
   // error thrown
 });
 ```
+
+
+## Zoku? WTF?
+
+I was reading *The Causal Angel* by Hannu Rajaniemi when I wrote this, there is a faction known as the Zoku, it's from the Japanese word for 'clan' I believe.
