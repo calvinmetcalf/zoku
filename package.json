@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/calvinmetcalf/ajax.git"
+    "url": "git://github.com/calvinmetcalf/zoku.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/calvinmetcalf/ajax/issues"
+    "url": "https://github.com/calvinmetcalf/zoku/issues"
   },
-  "homepage": "https://github.com/calvinmetcalf/ajax",
+  "homepage": "https://github.com/calvinmetcalf/zoku",
   "dependencies": {
     "lie": "^2.7.7"
   }
