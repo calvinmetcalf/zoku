@@ -1,7 +1,7 @@
 'use strict';
 
 var promise = require('lie');
-var qs = require('querystring');
+var qs = require('querystringparser');
 
 function ajax(url, method, body) {
   if (typeof method !== 'string' && typeof body === 'undefined') {
@@ -25,7 +25,11 @@ function ajax(url, method, body) {
       if (ajax.status>399) {
         reject(new Error(ajax.status));
       } else {
-        resolve(JSON.parse(ajax.response));
+        try {
+          resolve(JSON.parse(ajax.response));
+        } catch(e) {
+          resolve(ajax.response);
+        }
       }
       
       ajax.removeEventListener('load', onLoad, false);
