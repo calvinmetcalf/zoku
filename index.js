@@ -33,8 +33,14 @@ function ajax(url, method, body) {
       }
       
       ajax.removeEventListener('load', onLoad, false);
+      ajax.removeEventListener('error', onError, false);
     }
-    
+    function onError(e) {
+      ajax.removeEventListener('load', onLoad, false);
+      ajax.removeEventListener('error', onError, false);
+      reject(e);
+    }
+    ajax.addEventListener('error', reject, false);
     ajax.addEventListener('load', onLoad, false);
     
     if (method === 'get') {
