@@ -14,7 +14,9 @@
   },
   "homepage": "https://github.com/calvinmetcalf/zoku",
   "dependencies": {
-    "lie": "^2.7.7",
-    "querystringparser": "^0.1.0"
+    "lie": "^3.0.0"
+  },
+  "browser": {
+    "./ajax.js": "./browser.js"
   }
 }
