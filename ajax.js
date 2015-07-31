@@ -31,7 +31,7 @@ function ajax(reqUrl, method, body) {
       return reject(new TypeError('unknown protocol'));
     }
     options.method = method;
-    var req = verb.request(function (res) {
+    var req = verb.request(options, function (res) {
       var out = '';
       res.on('data', function (d) {
         out += d.toString();
