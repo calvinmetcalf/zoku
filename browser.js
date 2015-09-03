@@ -32,11 +32,11 @@ module.exports = ajax;
 function ajax(url, method, body) {
   return new Promise(function(resolve, reject) {
     if ((typeof method !== 'string' || methods.indexOf(method.toUpperCase()) === -1) && typeof body === 'undefined') {
-      body = body || {};
+      body = method || {};
       method = 'GET';
     }
     var data = qs.stringify(body);
-
+    method = method.toLowerCase();
     if (method === 'get') {
       url = url + '?' + data;
     }
