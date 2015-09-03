@@ -1,6 +1,6 @@
 {
   "name": "zoku",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "simple promise based ajax",
   "main": "index.js",
   "repository": {
