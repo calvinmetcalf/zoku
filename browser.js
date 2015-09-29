@@ -44,11 +44,16 @@ function ajax(url, method, body) {
     var ajax = new XMLHttpRequest();
 
     ajax.open(method, url, true);
-
+    try {
+      ajax.responseType = 'json';
+    } catch (e) {}
     function onLoad() {
       if (ajax.status > 299) {
         reject(new Error(ajax.response || ajax.status));
       } else {
+        if (ajax.responseType === 'json') {
+          return resolve(ajax.response);
+        }
         try {
           resolve(JSON.parse(ajax.response));
         } catch(e) {
