@@ -37,7 +37,7 @@ function ajax(url, method, body) {
     }
     var data = qs.stringify(body);
     method = method.toLowerCase();
-    if (method === 'get') {
+    if (method === 'get' && data) {
       url = url + '?' + data;
     }
 
